@@ -1,0 +1,44 @@
+buffer.o: buffer.c include/buffer.h include/types.h include/kernel.h \
+  include/stdarg.h
+cmdline.o: cmdline.c include/option.h include/library.h include/types.h \
+  include/stdarg.h
+console.o: console.c include/console.h include/memory.h include/types.h \
+  include/keyboard.h
+interrupt.o: interrupt.c include/types.h include/interrupt.h \
+  include/types.h
+ioport.o: ioport.c include/types.h
+kaddr.o: kaddr.c include/memory.h include/types.h
+keyboard.o: keyboard.c include/keyboard.h include/types.h \
+  include/console.h include/memory.h include/interrupt.h
+keymap.o: keymap.c include/keyboard.h include/types.h
+kthread.o: kthread.c sched.c include/sched.h include/types.h \
+  include/memory.h include/kernel.h include/stdarg.h
+lock.o: lock.c include/sched.h include/types.h
+main.o: main.c include/console.h include/memory.h include/types.h \
+  include/multiboot.h include/kernel.h include/stdarg.h include/memory.h \
+  include/library.h include/timer.h
+malloc.o: malloc.c include/types.h include/memory.h include/types.h
+page.o: page.c include/types.h include/kernel.h include/types.h \
+  include/stdarg.h include/memory.h
+panic.o: panic.c include/stdarg.h
+phys.o: phys.c include/memory.h include/types.h include/multiboot.h \
+  include/kernel.h include/stdarg.h include/types.h include/interrupt.h
+pic.o: pic.c include/types.h include/pic.h include/types.h
+printk.o: printk.c include/library.h include/types.h include/stdarg.h \
+  include/console.h include/memory.h
+segment.o: segment.c include/types.h include/segment.h include/types.h
+sched.o: sched.c include/sched.h include/types.h include/memory.h \
+  include/kernel.h include/stdarg.h
+lib/atoi.o: lib/atoi.c
+lib/ctype.o: lib/ctype.c
+lib/dstring.o: lib/dstring.c include/library.h include/types.h \
+  include/stdarg.h include/memory.h
+lib/dump.o: lib/dump.c include/types.h
+lib/itoa.o: lib/itoa.c include/types.h
+lib/sscanf.o: lib/sscanf.c include/stdarg.h
+lib/string.o: lib/string.c include/library.h include/types.h \
+  include/stdarg.h
+lib/utoa.o: lib/utoa.c include/types.h
+lib/vxprintf.o: lib/vxprintf.c include/library.h include/types.h \
+  include/stdarg.h
+OBJS = boot.o gdt.o idt.o isr.o timer.o buffer.o cmdline.o console.o interrupt.o ioport.o kaddr.o keyboard.o keymap.o kthread.o lock.o main.o malloc.o page.o panic.o phys.o pic.o printk.o segment.o sched.o lib/atoi.o lib/ctype.o lib/dstring.o lib/dump.o lib/itoa.o lib/sscanf.o lib/string.o lib/utoa.o lib/vxprintf.o 
